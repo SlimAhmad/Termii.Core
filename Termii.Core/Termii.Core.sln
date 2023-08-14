@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.33906.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Termii.Core", "Termii.Core.csproj", "{BC84D6F0-08B2-43C1-8857-21050796F811}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Termii.Core.Infrastructure.Build", "..\Termii.Core.Infrastructure.Build\Termii.Core.Infrastructure.Build.csproj", "{1AA3B61D-E8C8-4F20-98AD-05820CCDE6EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BC84D6F0-08B2-43C1-8857-21050796F811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC84D6F0-08B2-43C1-8857-21050796F811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC84D6F0-08B2-43C1-8857-21050796F811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA3B61D-E8C8-4F20-98AD-05820CCDE6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA3B61D-E8C8-4F20-98AD-05820CCDE6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA3B61D-E8C8-4F20-98AD-05820CCDE6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA3B61D-E8C8-4F20-98AD-05820CCDE6EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
