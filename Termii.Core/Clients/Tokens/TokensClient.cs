@@ -1,6 +1,7 @@
 ﻿using FlutterWave.Core.Models.Clients.Tokens.Exceptions;
 using FlutterWave.Core.Models.Clients.Tokenss.Exceptions;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
 using Termii.Core.Models.Services.Foundations.Termii.Tokens;
 using Termii.Core.Services.Foundations.Termii.Tokens.TokensService;
@@ -12,8 +13,8 @@ namespace Termii.Core.Clients.Tokens
     {
         private readonly ITokensService tokensService;
 
-        public TokensClient(ITokensService tokensService) =>
-            tokensService = tokensService;
+        public TokensClient(ITokensService tokenService) =>
+            tokensService = tokenService;
 
         public async ValueTask<InAppToken> SendInAppAsync(InAppToken externalInAppToken)
         {

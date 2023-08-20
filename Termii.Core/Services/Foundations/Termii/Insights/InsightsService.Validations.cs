@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
+﻿using System;
+using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
 using Termii.Core.Models.Services.Foundations.Termii.Insights;
 
 namespace Termii.Core.Services.Foundations.Termii.Insights.InsightsService
@@ -65,10 +66,10 @@ namespace Termii.Core.Services.Foundations.Termii.Insights.InsightsService
         }
 
         private static void ValidateBalanceParameters(string text) =>
-          Validate((Rule: IsInvalid(text), Parameter: nameof(History)));
+          Validate((Rule: IsInvalid(text), Parameter: nameof(Balance)));
 
         private static void ValidateHistoryParameters(string text) =>
-         Validate((Rule: IsInvalid(text), Parameter: nameof(Balance)));
+         Validate((Rule: IsInvalid(text), Parameter: nameof(History)));
 
         private static dynamic IsInvalid(object @object) => new
         {

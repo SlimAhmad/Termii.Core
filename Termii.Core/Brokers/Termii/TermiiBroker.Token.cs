@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
 using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalTokens;
 
 namespace Termii.Core.Brokers.Termii
@@ -48,7 +49,7 @@ namespace Termii.Core.Brokers.Termii
 
 
         }
-        public async ValueTask<ExternalEmailTokenResponse> PostSendEmailTokenAsync(ExternalEmailTokenRequest externalEmailTokenRequest)
+        public async ValueTask<ExternalEmailTokenResponse> PostEmailTokenAsync(ExternalEmailTokenRequest externalEmailTokenRequest)
         {
             return await PostAsync<ExternalEmailTokenRequest, ExternalEmailTokenResponse>(
             relativeUrl: $"api/email/otp/send",

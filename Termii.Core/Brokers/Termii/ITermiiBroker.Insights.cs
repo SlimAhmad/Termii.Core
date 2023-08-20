@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsights;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsights;
 
 namespace Termii.Core.Brokers.Termii
 {

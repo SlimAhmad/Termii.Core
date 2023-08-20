@@ -1,4 +1,6 @@
-﻿using Termii.Core.Brokers.DateTimes;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Termii.Core.Brokers.DateTimes;
 using Termii.Core.Brokers.Termii;
 using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsights;
 using Termii.Core.Models.Services.Foundations.Termii.Insights;
@@ -30,7 +32,7 @@ namespace Termii.Core.Services.Foundations.Termii.Insights.InsightsService
         public ValueTask<History> GetHistoryAsync(string apiKey) =>
         TryCatch(async () =>
         {
-
+            ValidateHistoryParameters(apiKey);
             ExternalHistoryResponse externalHistory = await termiiBroker.GetHistoryAsync(apiKey);
             return ConvertToInsights(externalHistory);
         });

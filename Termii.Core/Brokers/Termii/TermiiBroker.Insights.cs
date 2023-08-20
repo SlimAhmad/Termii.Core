@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsights;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsights;
 
 namespace Termii.Core.Brokers.Termii
 {
@@ -16,7 +17,7 @@ namespace Termii.Core.Brokers.Termii
         public async ValueTask<ExternalHistoryResponse> GetHistoryAsync(string apiKey)
         {
             return await GetAsync<ExternalHistoryResponse>(
-                relativeUrl: $"api.ng.termii.com/api/sms/inbox?api_key={apiKey}");
+                relativeUrl: $"api/sms/inbox?api_key={apiKey}");
         }
 
         public async ValueTask<ExternalSearchResponse> GetSearchPhoneNumberStatusAsync(ExternalSearchRequest externalSearchRequest)

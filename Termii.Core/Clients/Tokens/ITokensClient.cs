@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.Termii.Tokens;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.Termii.Tokens;
 
 namespace Termii.Core.Clients.Tokens
 {

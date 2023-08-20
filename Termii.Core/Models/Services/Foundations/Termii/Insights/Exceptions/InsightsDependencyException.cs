@@ -9,7 +9,7 @@ namespace Termii.Core.Models.Services.Foundations.Termii.Exceptions
             : base(message: "Insights dependency error occurred, contact support.",
                   innerException)
         { }
-
+  
         public InsightsDependencyException(string message, Exception innerException)
          : base(message: message, innerException)
         { }

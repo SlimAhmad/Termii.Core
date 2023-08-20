@@ -10,7 +10,7 @@ namespace Termii.Core.Models.Services.Foundations.Termii.Exceptions
         { }
 
         public InvalidInsightsException(Exception innerException)
-            : base(message: "Invalid Otp error occurred, fix errors and try again.",
+            : base(message: "Invalid insights error occurred, fix errors and try again.",
                   innerException)
         { }
 

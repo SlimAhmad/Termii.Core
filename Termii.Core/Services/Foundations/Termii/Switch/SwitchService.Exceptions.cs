@@ -1,4 +1,6 @@
 ﻿using RESTFulSense.Exceptions;
+using System;
+using System.Threading.Tasks;
 using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
 using Termii.Core.Models.Services.Foundations.Termii.Insights;
 using Termii.Core.Models.Services.Foundations.Termii.Switch;

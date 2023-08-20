@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.Termii.Insights;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.Termii.Insights;
 
 namespace Termii.Core.Clients.Insights
 {

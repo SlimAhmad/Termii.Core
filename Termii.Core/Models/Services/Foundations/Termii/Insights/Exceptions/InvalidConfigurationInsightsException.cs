@@ -9,6 +9,7 @@ namespace Termii.Core.Models.Services.Foundations.Termii.Exceptions
             : base(message: "Invalid insights configuration error occurred, contact support.",
                   innerException)
         { }
+    
 
         public InvalidConfigurationInsightsException(string message, Exception innerException)
          : base(message: message, innerException)

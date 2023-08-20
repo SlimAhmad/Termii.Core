@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.Termii.Switch;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.Termii.Switch;
 
 namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
 {

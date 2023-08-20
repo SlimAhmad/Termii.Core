@@ -1,4 +1,6 @@
-﻿using Termii.Core.Brokers.DateTimes;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Termii.Core.Brokers.DateTimes;
 using Termii.Core.Brokers.Termii;
 using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
 using Termii.Core.Models.Services.Foundations.Termii.Switch;
@@ -623,7 +625,8 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
                 Balance = externalSendBulkMessageResponse.Balance,
                 Message = externalSendBulkMessageResponse.Message,
                 MessageId = externalSendBulkMessageResponse.MessageId,
-                User = externalSendBulkMessageResponse.User
+                User = externalSendBulkMessageResponse.User,
+                Code = externalSendBulkMessageResponse.Code
             };
 
             return sendBulkMessage;

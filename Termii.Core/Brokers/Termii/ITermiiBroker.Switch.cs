@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
 
 namespace Termii.Core.Brokers.Termii
 {
@@ -15,21 +16,27 @@ namespace Termii.Core.Brokers.Termii
 
         ValueTask<ExternalTemplatedMessageResponse> PostTemplatedMessageAsync(ExternalTemplatedMessageRequest  externalTemplatedMessageRequest);
 
-        ValueTask<ExternalCampaignPhoneBookResponse> GetCampaignsPhoneBooksAsync(string apiKey);
-
-        ValueTask<ExternalUpdateCampaignPhoneBookResponse> UpdateCampaignPhoneBookAsync(string apiKey, ExternalUpdateCampaignPhoneBookRequest externalUpdateCampaignPhoneBookRequest);
-
-        ValueTask<ExternalDeletePhoneBookResponse> DeletePhoneBookAsync(string apiKey, string phoneBookId);
-
         ValueTask<ExternalCreateCampaignPhoneBookResponse> PostCreatePhoneBookAsync(ExternalCreateCampaignPhoneBookRequest externalCreateCampaignPhoneBookRequest);
 
+        ValueTask<ExternalCampaignPhoneBookResponse> GetCampaignsPhoneBooksAsync(string apiKey);
+
+      
+        ValueTask<ExternalDeletePhoneBookResponse> DeletePhoneBookAsync(string apiKey, string phoneBookId);
+
+     
         ValueTask<ExternalDeletePhoneBookContactResponse> DeletePhoneBookContactAsync(string apiKey, string phoneBookId);
 
         ValueTask<ExternalFetchContactsByPhoneBookResponse> GetContactsByPhoneBookIdAsync(string apiKey, string contactId);
 
-        ValueTask<ExternalAddContactToPhoneBookResponse> PostContactToPhoneBookAsync(ExternalAddContactToPhoneBookRequest  externalAddContactToPhoneBookRequest, string phoneBookId);
+        ValueTask<ExternalUpdateCampaignPhoneBookResponse> UpdateCampaignPhoneBookAsync(
+            string apiKey, ExternalUpdateCampaignPhoneBookRequest externalUpdateCampaignPhoneBookRequest);
 
-        ValueTask<ExternalAddMultipleContactsToPhoneBookResponse> PostContactsToPhoneBookAsync(ExternalAddMultipleContactsToPhoneBookRequest  externalAddMultipleContactsToPhoneBookRequest, string phoneBookId);
+
+        ValueTask<ExternalAddContactToPhoneBookResponse> PostContactToPhoneBookAsync(
+            ExternalAddContactToPhoneBookRequest  externalAddContactToPhoneBookRequest, string phoneBookId);
+
+        ValueTask<ExternalAddMultipleContactsToPhoneBookResponse> PostContactsToPhoneBookAsync(
+            ExternalAddMultipleContactsToPhoneBookRequest  externalAddMultipleContactsToPhoneBookRequest, string phoneBookId);
 
 
         ValueTask<ExternalSendCampaignResponse> PostCreateCampaignAsync(

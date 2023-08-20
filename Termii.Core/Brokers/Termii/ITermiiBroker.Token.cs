@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
+﻿using System.Threading.Tasks;
+using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
 using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalTokens;
 
 namespace Termii.Core.Brokers.Termii
@@ -11,7 +12,7 @@ namespace Termii.Core.Brokers.Termii
         ValueTask<ExternalVoiceCallResponse> PostVoiceCallAsync(ExternalVoiceCallRequest externalVoiceCallRequest);
         ValueTask<ExternalInAppTokenResponse> PostInAppAsync(ExternalInAppTokenRequest  externalInAppTokenRequest);
         ValueTask<ExternalVerifyTokenResponse> PostVerifyTokenAsync(ExternalVerifyTokenRequest  externalVerifyTokenRequest);
-        ValueTask<ExternalEmailTokenResponse> PostSendEmailTokenAsync(ExternalEmailTokenRequest externalEmailTokenRequest);
+        ValueTask<ExternalEmailTokenResponse> PostEmailTokenAsync(ExternalEmailTokenRequest externalEmailTokenRequest);
 
     }
 }

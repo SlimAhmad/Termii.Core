@@ -1,4 +1,5 @@
-﻿using Termii.Core.Brokers.DateTimes;
+﻿using System.Threading.Tasks;
+using Termii.Core.Brokers.DateTimes;
 using Termii.Core.Brokers.Termii;
 using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalTokens;
 using Termii.Core.Models.Services.Foundations.Termii.Tokens;
@@ -32,7 +33,7 @@ namespace Termii.Core.Services.Foundations.Termii.Tokens.TokensService
         {
             ValidateEmailToken(externalEmailToken);
             ExternalEmailTokenRequest externalEmailTokenRequest = ConvertToTokensRequest(externalEmailToken);
-            ExternalEmailTokenResponse externalEmailTokenResponse = await termiiBroker.PostSendEmailTokenAsync(externalEmailTokenRequest);
+            ExternalEmailTokenResponse externalEmailTokenResponse = await termiiBroker.PostEmailTokenAsync(externalEmailTokenRequest);
             return ConvertToTokensResponse(externalEmailToken, externalEmailTokenResponse);
         });
 
@@ -198,9 +199,10 @@ namespace Termii.Core.Services.Foundations.Termii.Tokens.TokensService
                    {
                      Otp = externalInAppTokenResponse.Data.Otp,
                      PhoneNumber = externalInAppTokenResponse.Data.PhoneNumber,
-                     PhoneNumberOther = externalInAppTokenResponse.Data.PhoneNumber,
-                     PinId = externalInAppTokenResponse.Data.PhoneNumber
-                   }
+                     PhoneNumberOther = externalInAppTokenResponse.Data.PhoneNumberOther,
+                     PinId = externalInAppTokenResponse.Data.PinId
+                   },
+                   Status = externalInAppTokenResponse.Status
             };
             return inAppToken;
 

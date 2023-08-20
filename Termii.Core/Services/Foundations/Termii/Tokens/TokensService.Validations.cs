@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
+﻿using System;
+using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
 using Termii.Core.Models.Services.Foundations.Termii.Tokens;
 
 namespace Termii.Core.Services.Foundations.Termii.Tokens.TokensService
@@ -17,7 +18,7 @@ namespace Termii.Core.Services.Foundations.Termii.Tokens.TokensService
                 (Rule: IsInvalid(voiceToken.Request.PinTimeToLive), Parameter: nameof(VoiceTokenRequest.PinTimeToLive)),
                 (Rule: IsInvalid(voiceToken.Request.PinLength), Parameter: nameof(VoiceTokenRequest.PinLength)),
                 (Rule: IsInvalid(voiceToken.Request.PhoneNumber), Parameter: nameof(VoiceTokenRequest.PhoneNumber)),
-                (Rule: IsInvalid(voiceToken.Request.PinAttempts), Parameter: nameof(VoiceTokenRequest.PinLength))
+                (Rule: IsInvalid(voiceToken.Request.PinAttempts), Parameter: nameof(VoiceTokenRequest.PinAttempts))
                 );
 
         }
@@ -50,7 +51,7 @@ namespace Termii.Core.Services.Foundations.Termii.Tokens.TokensService
                 (Rule: IsInvalid(sendToken.Request.To), Parameter: nameof(SendTokenRequest.To)),
                 (Rule: IsInvalid(sendToken.Request.ApiKey), Parameter: nameof(SendTokenRequest.ApiKey)),
                 (Rule: IsInvalid(sendToken.Request.MessageText), Parameter: nameof(SendTokenRequest.MessageText)),
-                (Rule: IsInvalid(sendToken.Request.PinType), Parameter: nameof(SendTokenRequest.PinType)),
+                (Rule: IsInvalid(sendToken.Request.MessageType), Parameter: nameof(SendTokenRequest.MessageType)),
                 (Rule: IsInvalid(sendToken.Request.Channel), Parameter: nameof(SendTokenRequest.Channel)),
                 (Rule: IsInvalid(sendToken.Request.From), Parameter: nameof(SendTokenRequest.From)),
                 (Rule: IsInvalid(sendToken.Request.PinType), Parameter: nameof(SendTokenRequest.PinType)),
@@ -211,7 +212,7 @@ namespace Termii.Core.Services.Foundations.Termii.Tokens.TokensService
 
         private static dynamic IsInvalid(double number) => new
         {
-            Condition = number >= 0,
+            Condition = number <= 0,
             Message = "Value is required"
         };
 

@@ -2,7 +2,7 @@
 {
     public class ApiConfigurations
     {
-        public string ApiUrl { get; set; } = "https://api.flutterwave.com/";
+        public string ApiUrl { get; set; } = "https://api.ng.termii.com/";
         public string ApiKey { get; set; }
 
     }

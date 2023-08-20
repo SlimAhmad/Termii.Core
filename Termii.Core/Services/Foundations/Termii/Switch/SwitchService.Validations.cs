@@ -1,4 +1,5 @@
-﻿using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
+﻿using System;
+using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
 using Termii.Core.Models.Services.Foundations.Termii.Switch;
 
 namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
@@ -73,7 +74,7 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
 
             Validate(
                 (Rule: IsInvalid(createCampaignPhoneBook.Request.ApiKey), Parameter: nameof(CreateCampaignPhoneBookRequest.ApiKey)),
-                (Rule: IsInvalid(createCampaignPhoneBook.Request.PhonebookName), Parameter: nameof(CreateCampaignPhoneBookRequest.ApiKey)),
+                (Rule: IsInvalid(createCampaignPhoneBook.Request.PhonebookName), Parameter: nameof(CreateCampaignPhoneBookRequest.PhonebookName)),
                 (Rule: IsInvalid(createCampaignPhoneBook.Request.Description), Parameter: nameof(CreateCampaignPhoneBookRequest.Description))
 
                 );
@@ -144,7 +145,12 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
             Validate(
                 (Rule: IsInvalid(numberMessage.Request.ApiKey), Parameter: nameof(SendBulkMessageRequest.ApiKey)),
                 (Rule: IsInvalid(numberMessage.Request.Sms), Parameter: nameof(SendBulkMessageRequest.Sms)),
-                (Rule: IsInvalid(numberMessage.Request.To), Parameter: nameof(SendBulkMessageRequest.To))
+                (Rule: IsInvalid(numberMessage.Request.To), Parameter: nameof(SendBulkMessageRequest.To)),
+                (Rule: IsInvalid(numberMessage.Request.From), Parameter: nameof(SendBulkMessageRequest.From)),
+                (Rule: IsInvalid(numberMessage.Request.Type), Parameter: nameof(SendBulkMessageRequest.Type)),
+                (Rule: IsInvalid(numberMessage.Request.Channel), Parameter: nameof(SendBulkMessageRequest.Channel))
+
+
 
 
 
@@ -160,12 +166,16 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
                 (Rule: IsInvalid(sendMessage.Request), Parameter: nameof(sendMessage.Request)));
 
             Validate(
-                (Rule: IsInvalid(sendMessage.Request.To), Parameter: nameof(SendMessageRequest.ApiKey)),
+                (Rule: IsInvalid(sendMessage.Request.To), Parameter: nameof(SendMessageRequest.To)),
                 (Rule: IsInvalid(sendMessage.Request.Sms), Parameter: nameof(SendMessageRequest.Sms)),
                 (Rule: IsInvalid(sendMessage.Request.Media), Parameter: nameof(SendMessageRequest.Media)),
                 (Rule: IsInvalid(sendMessage.Request.ApiKey), Parameter: nameof(SendMessageRequest.ApiKey)),
                 (Rule: IsInvalid(sendMessage.Request.Channel), Parameter: nameof(SendMessageRequest.Channel)),
-                (Rule: IsInvalid(sendMessage.Request.Type), Parameter: nameof(SendMessageRequest.Type))
+                (Rule: IsInvalid(sendMessage.Request.Type), Parameter: nameof(SendMessageRequest.Type)),
+                (Rule: IsInvalid(sendMessage.Request.From), Parameter: nameof(SendMessageRequest.From))
+
+
+
 
 
                 );
