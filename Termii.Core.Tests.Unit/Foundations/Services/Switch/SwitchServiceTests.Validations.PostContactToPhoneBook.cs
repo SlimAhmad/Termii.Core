@@ -113,7 +113,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 }
             };
 
-            var phoneBookId = invalidApiKey;
+      
 
             var invalidPaymentsException = new InvalidSwitchException();
 
@@ -155,7 +155,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<AddContactToPhoneBook> AddContactToPhoneBookTask =
-                this.switchService.PostContactToPhoneBookRequestAsync(addContactToPhoneBook,phoneBookId);
+                this.switchService.PostContactToPhoneBookRequestAsync(addContactToPhoneBook,invalidPhoneBookId);
 
             SwitchValidationException actualSwitchValidationException =
                 await Assert.ThrowsAsync<SwitchValidationException>(AddContactToPhoneBookTask.AsTask);

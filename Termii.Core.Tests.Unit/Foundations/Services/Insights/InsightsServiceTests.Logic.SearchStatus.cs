@@ -38,6 +38,10 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Insights
                 NetworkCode = createRandomSearchResponseProperties.NetworkCode,
                 Number = createRandomSearchResponseProperties.Number,
                 Status = createRandomSearchResponseProperties.Status,
+                DndActive = createRandomSearchResponseProperties.DndActive, 
+                Message = createRandomSearchResponseProperties.Message,
+             
+                
             };
 
 
@@ -54,7 +58,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Insights
                 NetworkCode = createRandomSearchResponseProperties.NetworkCode,
                 Number = createRandomSearchResponseProperties.Number,
                 Status = createRandomSearchResponseProperties.Status,
-
+                DndActive = createRandomSearchResponseProperties.DndActive,
+                Message = createRandomSearchResponseProperties.Message,
             };
 
 

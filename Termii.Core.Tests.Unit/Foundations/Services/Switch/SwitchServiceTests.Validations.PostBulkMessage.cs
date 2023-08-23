@@ -80,12 +80,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
         }
 
         [Theory]
-        [InlineData(null, null,null,null,null,null)]
-        [InlineData("", "","","","","")]
-        [InlineData("  ", "  "," "," "," "," ")]
+        [InlineData(null, null,null,null,null)]
+        [InlineData("", "","","","")]
+        [InlineData("  ", "  "," "," "," ")]
         public async Task ShouldThrowValidationExceptionOnPostSendBulkMessageIfSendBulkMessageIsInvalidAsync(
            string invalidChannel, string invalidApiKey, string invalidFrom,string invalidSms,
-           string invalidTo, string invalidType)
+           string invalidType)
         {
             // given
             var SendBulkMessage = new SendBulkMessage
@@ -97,6 +97,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                     From = invalidFrom,
                     Sms = invalidSms,
                     Type = invalidType,
+                   
                     
                   
 

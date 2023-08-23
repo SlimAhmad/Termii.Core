@@ -1,16 +1,24 @@
 ﻿using KellermanSoftware.CompareNetObjects;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using Moq;
 using RESTFulSense.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
+using System.Runtime.InteropServices.JavaScript;
 using Termii.Core.Brokers.DateTimes;
 using Termii.Core.Brokers.Termii;
 using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsights;
+using Termii.Core.Models.Services.Foundations.Termii.Insights;
 using Termii.Core.Services.Foundations.Termii.Insights.InsightsService;
 using Tynamix.ObjectFiller;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace Termii.Core.Tests.Unit.Foundations.Services.Insights
@@ -96,8 +104,22 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Insights
         {
             return new
             {
+                Data = GetRandomHistoryResponseData(),
+                Links = GetRandomHistoryResponseLinks(),
+                Meta = GetRandomHistoryResponseMeta(),
+
+
+            };
+        }
+
+        private static List<dynamic> GetRandomHistoryResponseData()
+        {
+            return Enumerable.Range(0, GetRandomNumber()).Select(
+            item => new
+            {
                 Sender = GetRandomString(),
                 Receiver = GetRandomString(),
+                CountryCode = GetRandomString(),
                 Message = GetRandomString(),
                 Amount = GetRandomNumber(),
                 Reroute = GetRandomNumber(),
@@ -108,11 +130,44 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Insights
                 MessageId = GetRandomString(),
                 NotifyUrl = new object(),
                 NotifyId = new object(),
-                CreatedAt = GetRandomString(),
+                CreatedAt = GetRandomDate(),
+                SentAt = GetRandomDate(),
+
+
+            }).ToList<dynamic>();
+        }
+
+        private static dynamic GetRandomHistoryResponseLinks()
+        {
+            return new
+            {
+                First = GetRandomString(),
+                Last = GetRandomString(),
+                Prev = new object(),
+                Next = GetRandomString(),
+
+
 
             };
         }
 
+        private static dynamic GetRandomHistoryResponseMeta()
+        {
+            return new
+            {
+                CurrentPage = GetRandomNumber(),
+                From = GetRandomNumber(),
+                LastPage = GetRandomNumber(),
+                Path = GetRandomString(),
+                PerPage = GetRandomNumber(),
+                To = GetRandomNumber(),
+                Total = GetRandomNumber(),
+
+
+
+
+            };
+        }
 
         #endregion
 
@@ -139,6 +194,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Insights
                 Status = GetRandomString(),
                 Network = GetRandomString(),
                 NetworkCode = GetRandomString(),
+                DndActive = GetRandomString(),
+                Message = GetRandomString(),
 
 
             };

@@ -80,7 +80,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             UpdateCampaignPhoneBook actualCreateUpdateCampaignPhoneBook =
-               await this.switchService.UpdateCampaignPhoneBookRequestAsync(phoneBookId,inputUpdateCampaignPhoneBook);
+               await this.switchService.UpdatePhoneBookRequestAsync(phoneBookId,inputUpdateCampaignPhoneBook);
 
             // then
             actualCreateUpdateCampaignPhoneBook.Should().BeEquivalentTo(expectedUpdateCampaignPhoneBook);

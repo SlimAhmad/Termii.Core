@@ -23,7 +23,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> PaymentsTask =
-                this.switchService.UpdateCampaignPhoneBookRequestAsync(phoneBookId,nullSwitch);
+                this.switchService.UpdatePhoneBookRequestAsync(phoneBookId,nullSwitch);
 
             SwitchValidationException actualSwitchValidationException =
                 await Assert.ThrowsAsync<SwitchValidationException>(
@@ -64,7 +64,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> UpdateCampaignPhoneBookTask =
-                this.switchService.UpdateCampaignPhoneBookRequestAsync(phoneBookId, invalidPayments);
+                this.switchService.UpdatePhoneBookRequestAsync(phoneBookId, invalidPayments);
 
             SwitchValidationException actualSwitchValidationException =
                 await Assert.ThrowsAsync<SwitchValidationException>(
@@ -135,7 +135,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> UpdateCampaignPhoneBookTask =
-                this.switchService.UpdateCampaignPhoneBookRequestAsync(phoneBookId, addContactToPhoneBook);
+                this.switchService.UpdatePhoneBookRequestAsync(phoneBookId, addContactToPhoneBook);
 
             SwitchValidationException actualSwitchValidationException =
                 await Assert.ThrowsAsync<SwitchValidationException>(UpdateCampaignPhoneBookTask.AsTask);
@@ -200,7 +200,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> UpdateCampaignPhoneBookTask =
-                this.switchService.UpdateCampaignPhoneBookRequestAsync(phoneBookId, addContactToPhoneBook);
+                this.switchService.UpdatePhoneBookRequestAsync(phoneBookId, addContactToPhoneBook);
 
             SwitchValidationException actualSwitchValidationException =
                 await Assert.ThrowsAsync<SwitchValidationException>(

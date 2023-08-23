@@ -11,11 +11,11 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
     {
 
         [Theory]
-        [InlineData(null)]
-        [InlineData("")]
-        [InlineData("  ")]
+        [InlineData(null,null)]
+        [InlineData("","")]
+        [InlineData("  "," ")]
         public async Task ShouldThrowValidationExceptionOnRetrieveCampaignHistoryIfFetchCampaignsHistoryRequestIsInvalidAsync(
-            string invalidApiKey)
+            string invalidApiKey, string invalidCampaignId)
         {
             // given
 
@@ -34,7 +34,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<FetchCampaignsHistory> FetchCampaignsTask =
-                this.switchService.GetCampaignsHistoryRequestAsync(invalidApiKey);
+                this.switchService.GetCampaignsHistoryRequestAsync(invalidApiKey,invalidCampaignId);
 
             SwitchValidationException actualSwitchValidationException =
                 await Assert.ThrowsAsync<SwitchValidationException>(FetchCampaignsTask.AsTask);

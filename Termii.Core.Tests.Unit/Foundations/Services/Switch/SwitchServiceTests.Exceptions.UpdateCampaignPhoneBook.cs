@@ -56,7 +56,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> retrieveSwitchTask =
-               this.switchService.UpdateCampaignPhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
+               this.switchService.UpdatePhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
 
             SwitchDependencyException
                 actualSwitchDependencyException =
@@ -118,7 +118,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> retrieveSwitchTask =
-               this.switchService.UpdateCampaignPhoneBookRequestAsync(apiKey, randomUpdateCampaignPhoneBook);
+               this.switchService.UpdatePhoneBookRequestAsync(apiKey, randomUpdateCampaignPhoneBook);
 
             SwitchDependencyException
                 actualSwitchDependencyException =
@@ -183,7 +183,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> retrieveSwitchTask =
-               this.switchService.UpdateCampaignPhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
+               this.switchService.UpdatePhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
 
             SwitchDependencyValidationException
                 actualSwitchDependencyValidationException =
@@ -246,7 +246,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> retrieveSwitchTask =
-               this.switchService.UpdateCampaignPhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
+               this.switchService.UpdatePhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
 
             SwitchDependencyValidationException
                 actualSwitchDependencyValidationException =
@@ -309,7 +309,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> retrieveSwitchTask =
-               this.switchService.UpdateCampaignPhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
+               this.switchService.UpdatePhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
 
             SwitchDependencyValidationException actualSwitchDependencyValidationException =
                 await Assert.ThrowsAsync<SwitchDependencyValidationException>(
@@ -371,7 +371,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> retrieveSwitchTask =
-               this.switchService.UpdateCampaignPhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
+               this.switchService.UpdatePhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
 
             SwitchDependencyException actualSwitchDependencyException =
                 await Assert.ThrowsAsync<SwitchDependencyException>(
@@ -430,7 +430,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
             // when
             ValueTask<UpdateCampaignPhoneBook> retrieveSwitchTask =
-               this.switchService.UpdateCampaignPhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
+               this.switchService.UpdatePhoneBookRequestAsync(apiKey,randomUpdateCampaignPhoneBook);
 
             SwitchServiceException actualSwitchServiceException =
                 await Assert.ThrowsAsync<SwitchServiceException>(

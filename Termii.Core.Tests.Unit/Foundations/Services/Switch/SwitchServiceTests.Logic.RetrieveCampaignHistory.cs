@@ -109,20 +109,21 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
 
 
             var apiKey = GetRandomString();
+            var campaignId = GetRandomString();
 
             this.termiiBrokerMock.Setup(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey))
+                broker.GetCampaignsHistoryAsync(apiKey,campaignId))
                     .ReturnsAsync(randomExternalFetchCampaignHistoryResponse);
 
             // when
             FetchCampaignsHistory actualFetchCampaignHistory =
-               await this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               await this.switchService.GetCampaignsHistoryRequestAsync(apiKey, campaignId);
 
             // then
             actualFetchCampaignHistory.Should().BeEquivalentTo(expectedFetchCampaignHistory);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();

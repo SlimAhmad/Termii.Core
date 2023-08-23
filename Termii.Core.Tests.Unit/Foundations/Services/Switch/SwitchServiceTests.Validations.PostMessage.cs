@@ -119,9 +119,6 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 key: nameof(SendMessageRequest.From),
                 values: "Value is required");
 
-            invalidPaymentsException.AddData(
-               key: nameof(SendMessageRequest.Media),
-               values: "Value is required");
              
             invalidPaymentsException.AddData(
                key: nameof(SendMessageRequest.To),
@@ -191,10 +188,6 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
             invalidPaymentsException.AddData(
                 key: nameof(SendMessageRequest.Channel),
                 values: "Value is required");
-
-            invalidPaymentsException.AddData(
-              key: nameof(SendMessageRequest.Media),
-              values: "Value is required");
 
             invalidPaymentsException.AddData(
                 key: nameof(SendMessageRequest.From),

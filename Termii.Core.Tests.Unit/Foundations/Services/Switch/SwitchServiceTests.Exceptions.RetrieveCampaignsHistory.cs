@@ -17,7 +17,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
             
 
             var apiKey = GetRandomString();
-          
+            var campaignId = GetRandomString();
+
             var httpResponseUrlNotFoundException =
                 new HttpResponseUrlNotFoundException();
 
@@ -32,12 +33,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                     invalidConfigurationSwitchException);
 
             this.termiiBrokerMock.Setup(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey))
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId))
                     .ThrowsAsync(httpResponseUrlNotFoundException);
 
             // when
             ValueTask<FetchCampaignsHistory> retrieveFetchCampaignsHistoryTask =
-               this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               this.switchService.GetCampaignsHistoryRequestAsync(apiKey,campaignId);
 
             SwitchDependencyException
                 actualSwitchDependencyException =
@@ -49,7 +50,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 expectedSwitchDependencyException);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();
@@ -65,6 +66,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
               
 
             var apiKey = GetRandomString();
+            var campaignId = GetRandomString();
+
             var unauthorizedSwitchException =
                 new UnauthorizedSwitchException(unauthorizedException);
 
@@ -72,12 +75,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 new SwitchDependencyException(unauthorizedSwitchException);
 
             this.termiiBrokerMock.Setup(broker =>
-                 broker.GetCampaignsHistoryAsync(apiKey))
+                 broker.GetCampaignsHistoryAsync(apiKey, campaignId))
                      .ThrowsAsync(unauthorizedException);
 
             // when
             ValueTask<FetchCampaignsHistory> retrieveFetchCampaignsHistoryTask =
-               this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               this.switchService.GetCampaignsHistoryRequestAsync(apiKey,campaignId);
 
             SwitchDependencyException
                 actualSwitchDependencyException =
@@ -89,7 +92,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 expectedSwitchDependencyException);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();
@@ -103,6 +106,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
               
 
             var apiKey = GetRandomString();
+            var campaignId = GetRandomString();
+
 
             var httpResponseNotFoundException =
                 new HttpResponseNotFoundException();
@@ -118,12 +123,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                     notFoundSwitchException);
 
             this.termiiBrokerMock.Setup(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey))
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId))
                     .ThrowsAsync(httpResponseNotFoundException);
 
             // when
             ValueTask<FetchCampaignsHistory> retrieveFetchCampaignsHistoryTask =
-               this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               this.switchService.GetCampaignsHistoryRequestAsync(apiKey,campaignId);
 
             SwitchDependencyValidationException
                 actualSwitchDependencyValidationException =
@@ -135,7 +140,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 expectedSwitchDependencyValidationException);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();
@@ -149,6 +154,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
               
 
             var apiKey = GetRandomString();
+            var campaignId = GetRandomString();
+
             var httpResponseBadRequestException =
                 new HttpResponseBadRequestException();
 
@@ -163,12 +170,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                     invalidSwitchException);
 
             this.termiiBrokerMock.Setup(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey))
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId))
                     .ThrowsAsync(httpResponseBadRequestException);
 
             // when
             ValueTask<FetchCampaignsHistory> retrieveFetchCampaignsHistoryTask =
-               this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               this.switchService.GetCampaignsHistoryRequestAsync(apiKey,campaignId);
 
             SwitchDependencyValidationException
                 actualSwitchDependencyValidationException =
@@ -180,7 +187,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 expectedSwitchDependencyValidationException);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();
@@ -194,6 +201,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
               
 
             var apiKey = GetRandomString();
+            var campaignId = GetRandomString();
+
             var httpResponseTooManyRequestsException =
                 new HttpResponseTooManyRequestsException();
 
@@ -208,12 +217,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                     excessiveCallSwitchException);
 
             this.termiiBrokerMock.Setup(broker =>
-                 broker.GetCampaignsHistoryAsync(apiKey))
+                 broker.GetCampaignsHistoryAsync(apiKey, campaignId))
                      .ThrowsAsync(httpResponseTooManyRequestsException);
 
             // when
             ValueTask<FetchCampaignsHistory> retrieveFetchCampaignsHistoryTask =
-               this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               this.switchService.GetCampaignsHistoryRequestAsync(apiKey,campaignId);
 
             SwitchDependencyValidationException actualSwitchDependencyValidationException =
                 await Assert.ThrowsAsync<SwitchDependencyValidationException>(
@@ -224,7 +233,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 expectedSwitchDependencyValidationException);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();
@@ -238,6 +247,8 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
               
 
             var apiKey = GetRandomString();
+            var campaignId = GetRandomString();
+
             var httpResponseException =
                 new HttpResponseException();
 
@@ -252,12 +263,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                     failedServerSwitchException);
 
             this.termiiBrokerMock.Setup(broker =>
-                 broker.GetCampaignsHistoryAsync(apiKey))
+                 broker.GetCampaignsHistoryAsync(apiKey, campaignId))
                      .ThrowsAsync(httpResponseException);
 
             // when
             ValueTask<FetchCampaignsHistory> retrieveFetchCampaignsHistoryTask =
-               this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               this.switchService.GetCampaignsHistoryRequestAsync(apiKey,campaignId);
 
             SwitchDependencyException actualSwitchDependencyException =
                 await Assert.ThrowsAsync<SwitchDependencyException>(
@@ -268,7 +279,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 expectedSwitchDependencyException);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();
@@ -281,7 +292,9 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
             // given
               
 
-            var apiKey = GetRandomString();var serviceException = new Exception();
+            var apiKey = GetRandomString();
+            var campaignId = GetRandomString();
+            var serviceException = new Exception();
 
             var failedSwitchServiceException =
                 new FailedSwitchServiceException(serviceException);
@@ -290,12 +303,12 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 new SwitchServiceException(failedSwitchServiceException);
 
             this.termiiBrokerMock.Setup(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey))
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId))
                     .ThrowsAsync(serviceException);
 
             // when
             ValueTask<FetchCampaignsHistory> retrieveFetchCampaignsHistoryTask =
-               this.switchService.GetCampaignsHistoryRequestAsync(apiKey);
+               this.switchService.GetCampaignsHistoryRequestAsync(apiKey,campaignId);
 
             SwitchServiceException actualSwitchServiceException =
                 await Assert.ThrowsAsync<SwitchServiceException>(
@@ -306,7 +319,7 @@ namespace Termii.Core.Tests.Unit.Foundations.Services.Switch
                 expectedSwitchServiceException);
 
             this.termiiBrokerMock.Verify(broker =>
-                broker.GetCampaignsHistoryAsync(apiKey),
+                broker.GetCampaignsHistoryAsync(apiKey, campaignId),
                     Times.Once);
 
             this.termiiBrokerMock.VerifyNoOtherCalls();
