@@ -40,7 +40,7 @@ namespace Termii.Core.Tests.Acceptance.Clients.Insights
 
             // when
             Status actualResult =
-                await this.termiiClient.Insights.RetrievePhoneNumberStatusAsync(inputStatus);
+                await this.termiiClient.Insights.PhoneNumberStatusAsync(inputStatus);
 
             // then
             actualResult.Should().BeEquivalentTo(expectedStatusResponse);

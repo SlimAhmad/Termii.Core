@@ -44,7 +44,7 @@ namespace Termii.Core.Tests.Acceptance.Clients.Tokens
 
             // when
             InAppToken actualResult =
-                await this.termiiClient.Tokens.SendInAppAsync(inputInAppToken);
+                await this.termiiClient.Tokens.SendInAppTokenAsync(inputInAppToken);
 
             // then
             actualResult.Should().BeEquivalentTo(expectedInAppToken);

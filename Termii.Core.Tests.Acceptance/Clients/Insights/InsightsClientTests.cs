@@ -84,6 +84,8 @@ namespace Termii.Core.Tests.Acceptance.Clients.Insights
                 NetworkCode = externalSearchResponse.NetworkCode,
                 Number = externalSearchResponse.Number,
                 Status = externalSearchResponse.Status,
+                DndActive = externalSearchResponse.DndActive,
+                Message = externalSearchResponse.Message,
             };
             return search;
 
@@ -131,19 +133,46 @@ namespace Termii.Core.Tests.Acceptance.Clients.Insights
             {
                 Response = new HistoryResponse
                 {
-                    Amount = externalHistoryResponse.Amount,
-                    Status = externalHistoryResponse.Status,
-                    CreatedAt = externalHistoryResponse.CreatedAt,
-                    MediaUrl = externalHistoryResponse.MediaUrl,
-                    Message = externalHistoryResponse.Message,
-                    MessageId = externalHistoryResponse.MessageId,
-                    NotifyId = externalHistoryResponse.NotifyId,
-                    NotifyUrl = externalHistoryResponse.NotifyUrl,
-                    Receiver = externalHistoryResponse.Receiver,
-                    Reroute = externalHistoryResponse.Reroute,
-                    SendBy = externalHistoryResponse.SendBy,
-                    Sender = externalHistoryResponse.Sender,
-                    SmsType = externalHistoryResponse.SmsType,
+                    Data = externalHistoryResponse.Data.Select(data =>
+                    {
+                        return new HistoryResponse.Datum
+                        {
+                            Amount = data.Amount,
+                            CountryCode = data.CountryCode,
+                            CreatedAt = data.CreatedAt,
+                            MediaUrl = data.MediaUrl,
+                            Message = data.Message,
+                            MessageId = data.MessageId,
+                            NotifyId = data.NotifyId,
+                            NotifyUrl = data.NotifyUrl,
+                            Receiver = data.Receiver,
+                            Reroute = data.Reroute,
+                            SendBy = data.SendBy,
+                            Sender = data.Sender,
+                            SentAt = data.SentAt,
+                            SmsType = data.SmsType,
+                            Status = data.Status,
+
+                        };
+                    }).ToList(),
+                    Links = new HistoryResponse.HistoryLinks
+                    {
+                        First = externalHistoryResponse.Links.First,
+                        Last = externalHistoryResponse.Links.Last,
+                        Next = externalHistoryResponse.Links.Next,
+                        Prev = externalHistoryResponse.Links.Prev,
+
+                    },
+                    Meta = new HistoryResponse.HistoryMeta
+                    {
+                        CurrentPage = externalHistoryResponse.Meta.CurrentPage,
+                        From = externalHistoryResponse.Meta.From,
+                        LastPage = externalHistoryResponse.Meta.LastPage,
+                        Path = externalHistoryResponse.Meta.Path,
+                        PerPage = externalHistoryResponse.Meta.PerPage,
+                        To = externalHistoryResponse.Meta.To,
+                        Total = externalHistoryResponse.Meta.Total,
+                    }
                 }
             };
 

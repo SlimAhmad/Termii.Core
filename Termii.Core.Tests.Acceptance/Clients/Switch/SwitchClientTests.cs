@@ -649,6 +649,8 @@ namespace Termii.Core.Tests.Acceptance.Clients.Switch
             CreateExternalCreateCampaignPhoneBookResponseFiller().Create();
         private static ExternalSendCampaignResponse CreateExternalSendCampaignResponseResult() =>
              CreateExternalSendCampaignResponseFiller().Create();
+        private static ExternalAddContactToPhoneBookResponse CreateExternalAddContactToPhoneBookResponseResult() =>
+             CreateExternalAddContactToPhoneBookResponseFiller().Create();
         private static ExternalAddMultipleContactsToPhoneBookResponse CreateExternalAddMultipleContactsToPhoneBookResponseResult() =>
             CreateExternalAddMultipleContactsToPhoneBookResponseFiller().Create();
         private static ExternalSendBulkMessageResponse CreateExternalSendBulkMessageResponseResult() =>
@@ -674,25 +676,27 @@ namespace Termii.Core.Tests.Acceptance.Clients.Switch
 
 
 
-        private static UpdateCampaignPhoneBook CreateRandomUpdateCampaignPhoneBookResult() =>
+        private static UpdateCampaignPhoneBook CreateRandomUpdateCampaignPhoneBookResponseResult() =>
           CreateRandomUpdateCampaignPhoneBookFiller().Create();
-        private static TemplatedMessage CreateRandomTemplatedMessageResult() =>
+        private static TemplatedMessage CreateRandomTemplatedMessageResponseResult() =>
          CreateRandomTemplatedMessageFiller().Create();
-        private static CreateSenderId CreateRandomCreateSenderIdResult() =>
+        private static CreateSenderId CreateRandomSenderIdResponseResult() =>
          CreateRandomCreateSenderIdFiller().Create();
-        private static NumberMessage CreateRandomNumberMessageResult() =>
+        private static NumberMessage CreateRandomNumberMessageResponseResult() =>
          CreateRandomNumberMessageFiller().Create();
-        private static CreateCampaignPhoneBook CreateRandomCreateCampaignPhoneBookResult() =>
+        private static CreateCampaignPhoneBook CreateRandomCampaignPhoneBookResponseResult() =>
          CreateRandomCreateCampaignPhoneBookFiller().Create();
-        private static SendCampaign CreateRandomSendCampaignResult() =>
+        private static SendCampaign CreateRandomSendCampaignResponseResult() =>
          CreateRandomSendCampaignFiller().Create();
-        private static AddContactToPhoneBook CreateRandomAddContactToPhoneBookResult() =>
+        private static AddContactToPhoneBook CreateRandomAddContactToPhoneBookResponseResult() =>
             CreateRandomAddContactToPhoneBookFiller().Create();
-        private static AddMultipleContactsToPhoneBook CreateRandomAddMultipleContactsToPhoneBookResult() =>
+        private static AddMultipleContactsToPhoneBook CreateRandomAddMultipleContactsToPhoneBookResponseResult() =>
             CreateRandomAddMultipleContactsToPhoneBookFiller().Create();
-        private static SendBulkMessage CreateRandomSendBulkMessageResult() =>
+        private static SendBulkMessage CreateRandomSendBulkMessageResponseResult() =>
             CreateRandomSendBulkMessageFiller().Create();
-   
+        private static SendMessage CreateRandomSendMessageResponseResult() =>
+            CreateRandomSendMessageFiller().Create();
+
 
 
 

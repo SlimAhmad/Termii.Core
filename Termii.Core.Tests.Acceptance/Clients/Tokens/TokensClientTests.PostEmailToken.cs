@@ -44,7 +44,7 @@ namespace Termii.Core.Tests.Acceptance.Clients.Tokens
 
             // when
             EmailToken actualResult =
-                await this.termiiClient.Tokens.SendSendEmailTokenAsync(inputEmailToken);
+                await this.termiiClient.Tokens.SendEmailTokenAsync(inputEmailToken);
 
             // then
             actualResult.Should().BeEquivalentTo(expectedEmailToken);
