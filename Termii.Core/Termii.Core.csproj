@@ -4,6 +4,17 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Termii.Core</Title>
+    <PackageIcon>termii.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/SlimAhmad/Termii.Core</RepositoryUrl>
+    <PackageTags>The Standard,Termii,Tokens,.NET</PackageTags>
+    <Company>Panda-tut Enterprises Limited</Company>
+    <Authors>Ahmad Salim</Authors>
+    <Description>Termii.Core is a Standard-Compliant .NET library built on top of Termii's API RESTful endpoints to enable software engineers to develop SMS, Email OTP verification solutions in .NET.</Description>
+    <Copyright>Panda-tut Enterprises Limited 2023 (c)</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +26,20 @@
 		<InternalsVisibleTo Include="Termii.Core.Tests.Unit" />
 		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
 		<InternalsVisibleTo Include="Termii.Core.Tests.Acceptance" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="termii.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 	
 </Project>

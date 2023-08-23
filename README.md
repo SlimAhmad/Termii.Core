@@ -10,7 +10,7 @@
 
 
 ## Introduction
-Termii.Core is a Standard-Compliant .NET library built on top of Termii's API RESTful endpoints to enable software engineers to develop SMS, Email verification solutions in .NET.
+Termii.Core is a Standard-Compliant .NET library built on top of Termii's API RESTful endpoints to enable software engineers to develop SMS, Email OTP verification solutions in .NET.
 
 ## This library implements the following section
 Please review the following documents:
