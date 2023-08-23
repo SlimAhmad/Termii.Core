@@ -23,9 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="API\Insights\" />
-    <Folder Include="API\Switch\" />
-    <Folder Include="API\Tokens\" />
+    <ProjectReference Include="..\Termii.Core\Termii.Core.csproj" />
   </ItemGroup>
 
 </Project>
