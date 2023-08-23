@@ -168,7 +168,6 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
             Validate(
                 (Rule: IsInvalid(sendMessage.Request.To), Parameter: nameof(SendMessageRequest.To)),
                 (Rule: IsInvalid(sendMessage.Request.Sms), Parameter: nameof(SendMessageRequest.Sms)),
-                (Rule: IsInvalid(sendMessage.Request.Media), Parameter: nameof(SendMessageRequest.Media)),
                 (Rule: IsInvalid(sendMessage.Request.ApiKey), Parameter: nameof(SendMessageRequest.ApiKey)),
                 (Rule: IsInvalid(sendMessage.Request.Channel), Parameter: nameof(SendMessageRequest.Channel)),
                 (Rule: IsInvalid(sendMessage.Request.Type), Parameter: nameof(SendMessageRequest.Type)),

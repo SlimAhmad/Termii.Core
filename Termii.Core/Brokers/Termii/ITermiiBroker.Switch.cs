@@ -41,7 +41,7 @@ namespace Termii.Core.Brokers.Termii
 
         ValueTask<ExternalSendCampaignResponse> PostCreateCampaignAsync(
             ExternalSendCampaignRequest externalSendCampaignRequest);
-        ValueTask<ExternalFetchCampaignsHistoryResponse> GetCampaignsHistoryAsync(string apiKey);
+        ValueTask<ExternalFetchCampaignsHistoryResponse> GetCampaignsHistoryAsync(string apiKey, string campaignId);
 
         ValueTask<ExternalFetchCampaignsResponse> GetCampaignsAsync(string apiKey);
 

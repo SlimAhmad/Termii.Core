@@ -16,7 +16,7 @@ namespace Termii.Core.Clients.Tokens
         public TokensClient(ITokensService tokenService) =>
             tokensService = tokenService;
 
-        public async ValueTask<InAppToken> SendInAppAsync(InAppToken externalInAppToken)
+        public async ValueTask<InAppToken> SendInAppTokenAsync(InAppToken externalInAppToken)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace Termii.Core.Clients.Tokens
             }
         }
 
-        public async ValueTask<EmailToken> SendSendEmailTokenAsync(EmailToken externalEmailToken)
+        public async ValueTask<EmailToken> SendEmailTokenAsync(EmailToken externalEmailToken)
         {
             try
             {

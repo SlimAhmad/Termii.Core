@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalSwitch;
 
 namespace Termii.Core.Brokers.Termii
@@ -70,7 +71,8 @@ namespace Termii.Core.Brokers.Termii
 
         }
 
-        public async ValueTask<ExternalUpdateCampaignPhoneBookResponse> UpdateCampaignPhoneBookAsync(string phoneBookId,ExternalUpdateCampaignPhoneBookRequest externalUpdateCampaignPhoneBookRequest)
+        public async ValueTask<ExternalUpdateCampaignPhoneBookResponse> UpdateCampaignPhoneBookAsync(
+            string phoneBookId,ExternalUpdateCampaignPhoneBookRequest externalUpdateCampaignPhoneBookRequest)
         {
             return await PutAsync<ExternalUpdateCampaignPhoneBookRequest, ExternalUpdateCampaignPhoneBookResponse>(
             relativeUrl: $"api/phonebooks/{phoneBookId}",
@@ -92,6 +94,7 @@ namespace Termii.Core.Brokers.Termii
 
         public async ValueTask<ExternalDeletePhoneBookContactResponse> DeletePhoneBookContactAsync(string apiKey, string contactId)
         {
+           
             return await DeleteAsync<ExternalDeletePhoneBookContactResponse>(
             relativeUrl: $"api/phonebook/contact/{contactId}?api_key={apiKey}");
 
@@ -145,10 +148,10 @@ namespace Termii.Core.Brokers.Termii
 
 
         }
-        public async ValueTask<ExternalFetchCampaignsHistoryResponse> GetCampaignsHistoryAsync(string apiKey)
+        public async ValueTask<ExternalFetchCampaignsHistoryResponse> GetCampaignsHistoryAsync(string apiKey, string campaignId)
         {
             return await GetAsync<ExternalFetchCampaignsHistoryResponse>(
-            relativeUrl: $"api/sms/campaigns/campaign_id?api_key={apiKey}");
+            relativeUrl: $"api/sms/campaigns/{campaignId}?api_key={apiKey}");
 
 
         }

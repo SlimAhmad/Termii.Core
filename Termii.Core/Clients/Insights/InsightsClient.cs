@@ -2,6 +2,8 @@
 using System.Text.Json;
 using System.Threading.Tasks;
 using Termii.Core.Models.Clients.Insights.Exceptions;
+using Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsights;
+using Termii.Core.Models.Services.Foundations.Termii;
 using Termii.Core.Models.Services.Foundations.Termii.Exceptions;
 using Termii.Core.Models.Services.Foundations.Termii.Insights;
 using Termii.Core.Services.Foundations.Termii.Insights.InsightsService;
@@ -78,7 +80,7 @@ namespace Termii.Core.Clients.Insights
             }
         }
 
-        public async ValueTask<Status> RetrievePhoneNumberStatusAsync(Status externalStatus)
+        public async ValueTask<Status> PhoneNumberStatusAsync(Status externalStatus)
         {
             try
             {
@@ -117,13 +119,33 @@ namespace Termii.Core.Clients.Insights
             }
             catch (InsightsValidationException insightsValidationException)
             {
+               
 
                 throw new InsightsClientValidationException(
                     insightsValidationException.InnerException as Xeption);
             }
             catch (InsightsDependencyValidationException insightsDependencyValidationException)
             {
+                var message = insightsDependencyValidationException.InnerException.InnerException.Message;
+                if (message != null)
+                {
+                    NotFoundSearchResponse response =
+                        JsonSerializer.Deserialize<NotFoundSearchResponse>(message);
 
+                    return new Search
+                    {
+                        Response = new SearchResponse
+                        {
+                            Message = response.Message,
+                            DndActive = response.DndActive,
+                            Network = response.Network,
+                            NetworkCode = response.NetworkCode,
+                            Number = response.Number,
+                            Status = response.Status,
+
+                        }
+                    };
+                }
 
                 throw new InsightsClientValidationException(
                     insightsDependencyValidationException.InnerException as Xeption);

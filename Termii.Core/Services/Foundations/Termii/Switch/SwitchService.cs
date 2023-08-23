@@ -20,12 +20,12 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
             this.dateTimeBroker = dateTimeBroker;
         }
 
-        public ValueTask<DeletePhoneBookContact> DeletePhoneBookContactRequestAsync(string apiKey, string phoneBookId) =>
+        public ValueTask<DeletePhoneBookContact> DeletePhoneBookContactRequestAsync(string apiKey, string contactId) =>
         TryCatch(async () =>
         {
             ValidateDeletePhoneBookContactParameters(apiKey);
-            ValidateDeletePhoneBookContactParameters(phoneBookId);
-            ExternalDeletePhoneBookContactResponse externalDeletePhoneBookContactResponse = await termiiBroker.DeletePhoneBookContactAsync(apiKey,phoneBookId);
+            ValidateDeletePhoneBookContactParameters(contactId);
+            ExternalDeletePhoneBookContactResponse externalDeletePhoneBookContactResponse = await termiiBroker.DeletePhoneBookContactAsync(apiKey,contactId);
             return ConvertToSwitchResponse(externalDeletePhoneBookContactResponse);
         });
 
@@ -38,11 +38,12 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
             return ConvertToSwitchResponse(externalDeletePhoneBookResponse);
         });
 
-        public ValueTask<FetchCampaignsHistory> GetCampaignsHistoryRequestAsync(string apiKey) =>
+        public ValueTask<FetchCampaignsHistory> GetCampaignsHistoryRequestAsync(string apiKey, string campaignId) =>
         TryCatch(async () =>
         {
             ValidateHistoryParameters(apiKey);
-            ExternalFetchCampaignsHistoryResponse externalFetchCampaignsHistoryResponse = await termiiBroker.GetCampaignsHistoryAsync(apiKey);
+            ValidateHistoryParameters(campaignId);
+            ExternalFetchCampaignsHistoryResponse externalFetchCampaignsHistoryResponse = await termiiBroker.GetCampaignsHistoryAsync(apiKey, campaignId);
             return ConvertToSwitchResponse(externalFetchCampaignsHistoryResponse);
         });
 
@@ -62,12 +63,12 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
             return ConvertToSwitchResponse(externalFetchCampaignsResponse);
         });
 
-        public ValueTask<FetchContactsByPhoneBookId> GetContactsByPhoneBookIdRequestAsync(string apiKey, string contactId) =>
+        public ValueTask<FetchContactsByPhoneBookId> GetContactsByPhoneBookIdRequestAsync(string apiKey, string phoneBookId) =>
         TryCatch(async () =>
         {
             ValidateFetchContactsByPhoneBookIdParameters(apiKey);
-            ValidateFetchContactsByPhoneBookIdParameters(contactId);
-            ExternalFetchContactsByPhoneBookResponse externalDeletePhoneBookResponse = await termiiBroker.GetContactsByPhoneBookIdAsync(apiKey, contactId);
+            ValidateFetchContactsByPhoneBookIdParameters(phoneBookId);
+            ExternalFetchContactsByPhoneBookResponse externalDeletePhoneBookResponse = await termiiBroker.GetContactsByPhoneBookIdAsync(apiKey, phoneBookId);
             return ConvertToSwitchResponse(externalDeletePhoneBookResponse);
         });
 
@@ -167,7 +168,7 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
             return ConvertToSwitchResponse(externalTemplatedMessage, externalTemplatedMessageResponse);
         });
 
-        public ValueTask<UpdateCampaignPhoneBook> UpdateCampaignPhoneBookRequestAsync(
+        public ValueTask<UpdateCampaignPhoneBook> UpdatePhoneBookRequestAsync(
             string phoneBookId, UpdateCampaignPhoneBook externalUpdateCampaignPhoneBook) =>
         TryCatch(async () =>
         {

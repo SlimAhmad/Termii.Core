@@ -8,7 +8,7 @@ namespace Termii.Core.Clients.Switch
 
         ValueTask<FetchSenderIds> RetrieveSenderIdsAsync(string apiKey);
 
-        ValueTask<CreateSenderId> SendSenderIdAsync(CreateSenderId externalCreateSenderId);
+        ValueTask<CreateSenderId> CreateSenderIdAsync(CreateSenderId externalCreateSenderId);
 
         ValueTask<SendMessage> SendMessageAsync(SendMessage externalSendMessage);
 
@@ -17,13 +17,13 @@ namespace Termii.Core.Clients.Switch
 
         ValueTask<TemplatedMessage> SendTemplatedMessageAsync(TemplatedMessage externalTemplatedMessage);
 
-        ValueTask<CampaignPhoneBook> RetrieveCampaignsPhoneBooksAsync(string apiKey);
+        ValueTask<CampaignPhoneBook> RetrievePhoneBooksAsync(string apiKey);
 
-        ValueTask<UpdateCampaignPhoneBook> UpdateCampaignPhoneBookAsync(string apiKey, UpdateCampaignPhoneBook externalUpdateCampaignPhoneBook);
+        ValueTask<UpdateCampaignPhoneBook> UpdatePhoneBookAsync(string apiKey, UpdateCampaignPhoneBook externalUpdateCampaignPhoneBook);
 
         ValueTask<DeletePhoneBook> RemovePhoneBookAsync(string apiKey, string phoneBookId);
 
-        ValueTask<CreateCampaignPhoneBook> SendCreatePhoneBookAsync(CreateCampaignPhoneBook externalCreateCampaignPhoneBook);
+        ValueTask<CreateCampaignPhoneBook> CreatePhoneBookAsync(CreateCampaignPhoneBook externalCreateCampaignPhoneBook);
 
         ValueTask<DeletePhoneBookContact> RemovePhoneBookContactAsync(string apiKey, string phoneBookId);
 
@@ -33,9 +33,9 @@ namespace Termii.Core.Clients.Switch
 
         ValueTask<AddMultipleContactsToPhoneBook> SendContactsToPhoneBookAsync(AddMultipleContactsToPhoneBook externalAddMultipleContactsToPhoneBook, string phoneBookId);
 
-        ValueTask<SendCampaign> SendCreateCampaignAsync(
+        ValueTask<SendCampaign> CreateCampaignAsync(
             SendCampaign externalSendCampaign);
-        ValueTask<FetchCampaignsHistory> RetrieveCampaignsHistoryAsync(string apiKey);
+        ValueTask<FetchCampaignsHistory> RetrieveCampaignsHistoryAsync(string apiKey, string campaignId);
 
         ValueTask<FetchCampaigns> RetrieveCampaignsAsync(string apiKey);
     }

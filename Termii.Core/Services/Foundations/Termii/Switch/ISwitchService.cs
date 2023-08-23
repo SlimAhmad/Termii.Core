@@ -18,7 +18,7 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
 
         ValueTask<CampaignPhoneBook> GetCampaignsPhoneBooksRequestAsync(string apiKey);
 
-        ValueTask<UpdateCampaignPhoneBook> UpdateCampaignPhoneBookRequestAsync(string apiKey, UpdateCampaignPhoneBook externalUpdateCampaignPhoneBook);
+        ValueTask<UpdateCampaignPhoneBook> UpdatePhoneBookRequestAsync(string apiKey, UpdateCampaignPhoneBook externalUpdateCampaignPhoneBook);
 
         ValueTask<DeletePhoneBook> DeletePhoneBookRequestAsync(string apiKey, string phoneBookId);
 
@@ -34,7 +34,7 @@ namespace Termii.Core.Services.Foundations.Termii.Switch.SwitchService
 
         ValueTask<SendCampaign> PostCreateCampaignRequestAsync(
             SendCampaign externalSendCampaign);
-        ValueTask<FetchCampaignsHistory> GetCampaignsHistoryRequestAsync(string apiKey);
+        ValueTask<FetchCampaignsHistory> GetCampaignsHistoryRequestAsync(string apiKey, string campaignId);
 
         ValueTask<FetchCampaigns> GetCampaignsRequestAsync(string apiKey);
 

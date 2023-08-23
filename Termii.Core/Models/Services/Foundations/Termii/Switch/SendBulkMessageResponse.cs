@@ -19,7 +19,7 @@ namespace Termii.Core.Models.Services.Foundations.Termii.Switch
         public string Message { get; set; }
 
         [JsonProperty("balance")]
-        public int Balance { get; set; }
+        public double Balance { get; set; }
 
         [JsonProperty("user")]
         public string User { get; set; }

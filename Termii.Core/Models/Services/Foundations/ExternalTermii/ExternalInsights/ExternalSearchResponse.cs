@@ -15,6 +15,12 @@ namespace Termii.Core.Models.Services.Foundations.ExternalTermii.ExternalInsight
         [JsonProperty("status")]
         public string Status { get; set; }
 
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("dnd_active")]
+        public string DndActive { get; set; }
+
         [JsonProperty("network")]
         public string Network { get; set; }
 

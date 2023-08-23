@@ -9,8 +9,8 @@ namespace Termii.Core.Clients.Tokens
         ValueTask<SendToken> SendTokenAsync(SendToken externalSendToken);
         ValueTask<VoiceToken> SendVoiceTokenAsync(VoiceToken externalVoiceToken);
         ValueTask<VoiceCall> SendVoiceCallAsync(VoiceCall externalVoiceCall);
-        ValueTask<InAppToken> SendInAppAsync(InAppToken externalInAppToken);
+        ValueTask<InAppToken> SendInAppTokenAsync(InAppToken externalInAppToken);
         ValueTask<VerifyToken> SendVerifyTokenAsync(VerifyToken externalVerifyToken);
-        ValueTask<EmailToken> SendSendEmailTokenAsync(EmailToken externalEmailToken);
+        ValueTask<EmailToken> SendEmailTokenAsync(EmailToken externalEmailToken);
     }
 }

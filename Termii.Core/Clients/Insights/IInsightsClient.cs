@@ -12,6 +12,6 @@ namespace Termii.Core.Clients.Insights
 
         ValueTask<Search> RetrieveSearchPhoneNumberStatusAsync(Search externalSearch);
 
-        ValueTask<Status> RetrievePhoneNumberStatusAsync(Status externalStatus);
+        ValueTask<Status> PhoneNumberStatusAsync(Status externalStatus);
     }
 }

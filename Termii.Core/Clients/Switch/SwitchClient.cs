@@ -12,8 +12,8 @@ namespace Termii.Core.Clients.Switch
     {
         private readonly ISwitchService switchService;
 
-        public SwitchClient(ISwitchService switchService) =>
-            switchService = switchService;
+        public SwitchClient(ISwitchService  switchService) =>
+            this.switchService = switchService;
 
         public async ValueTask<DeletePhoneBook> RemovePhoneBookAsync(string apiKey, string phoneBookId)
         {
@@ -105,11 +105,11 @@ namespace Termii.Core.Clients.Switch
             }
         }
 
-        public async ValueTask<FetchCampaignsHistory> RetrieveCampaignsHistoryAsync(string apiKey)
+        public async ValueTask<FetchCampaignsHistory> RetrieveCampaignsHistoryAsync(string apiKey, string campaignId)
         {
             try
             {
-                return await switchService.GetCampaignsHistoryRequestAsync(apiKey);
+                return await switchService.GetCampaignsHistoryRequestAsync(apiKey, campaignId);
             }
             catch (SwitchValidationException switchValidationException)
             {
@@ -135,7 +135,7 @@ namespace Termii.Core.Clients.Switch
             }
         }
 
-        public async ValueTask<CampaignPhoneBook> RetrieveCampaignsPhoneBooksAsync(string apiKey)
+        public async ValueTask<CampaignPhoneBook> RetrievePhoneBooksAsync(string apiKey)
         {
             try
             {
@@ -315,7 +315,7 @@ namespace Termii.Core.Clients.Switch
             }
         }
 
-        public async ValueTask<SendCampaign> SendCreateCampaignAsync(SendCampaign externalSendCampaign)
+        public async ValueTask<SendCampaign> CreateCampaignAsync(SendCampaign externalSendCampaign)
         {
             try
             {
@@ -345,7 +345,7 @@ namespace Termii.Core.Clients.Switch
             }
         }
 
-        public async ValueTask<CreateCampaignPhoneBook> SendCreatePhoneBookAsync(CreateCampaignPhoneBook externalCreateCampaignPhoneBook)
+        public async ValueTask<CreateCampaignPhoneBook> CreatePhoneBookAsync(CreateCampaignPhoneBook externalCreateCampaignPhoneBook)
         {
             try
             {
@@ -435,7 +435,7 @@ namespace Termii.Core.Clients.Switch
             }
         }
 
-        public async ValueTask<CreateSenderId> SendSenderIdAsync(CreateSenderId externalCreateSenderId)
+        public async ValueTask<CreateSenderId> CreateSenderIdAsync(CreateSenderId externalCreateSenderId)
         {
             try
             {
@@ -495,11 +495,11 @@ namespace Termii.Core.Clients.Switch
             }
         }
 
-        public async ValueTask<UpdateCampaignPhoneBook> UpdateCampaignPhoneBookAsync(string apiKey, UpdateCampaignPhoneBook externalUpdateCampaignPhoneBook)
+        public async ValueTask<UpdateCampaignPhoneBook> UpdatePhoneBookAsync(string apiKey, UpdateCampaignPhoneBook externalUpdateCampaignPhoneBook)
         {
             try
             {
-                return await switchService.UpdateCampaignPhoneBookRequestAsync(apiKey,externalUpdateCampaignPhoneBook);
+                return await switchService.UpdatePhoneBookRequestAsync(apiKey,externalUpdateCampaignPhoneBook);
             }
             catch (SwitchValidationException switchValidationException)
             {
