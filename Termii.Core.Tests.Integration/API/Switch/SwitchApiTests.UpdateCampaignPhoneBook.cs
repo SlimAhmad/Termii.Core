@@ -19,7 +19,7 @@ namespace Termii.Core.Tests.Integration.API.Switch
             {
                 Request = new UpdateCampaignPhoneBookRequest
                 {
-                    ApiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv",
+                    ApiKey = Environment.GetEnvironmentVariable("ApiKey"),
                     Description = "test 2",
                     PhonebookName = "test 2"
                 }

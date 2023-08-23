@@ -13,7 +13,7 @@ namespace Termii.Core.Tests.Integration.API.Insights
         public async Task ShouldRetrieveHistoryAsync()
         {
             // given
-            string apiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv";
+            string? apiKey = Environment.GetEnvironmentVariable("ApiKey");
 
             // when
             History retrievedTermiiModel =

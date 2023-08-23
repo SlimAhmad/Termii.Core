@@ -18,7 +18,7 @@ namespace Termii.Core.Tests.Integration.API.Tokens
             {
                 Request = new EmailTokenRequest
                 {
-                    ApiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv",
+                    ApiKey = Environment.GetEnvironmentVariable("ApiKey"),
                     Code = "12345",
                     EmailAddress = "slimahmad6@gmail.com",
                     EmailConfigurationId = "11147dee-8878-46bd-8cc6-b2d2d6e0d4fd"

@@ -19,7 +19,7 @@ namespace Termii.Core.Tests.Integration.API.Switch
             {
                 Request = new TemplatedMessageRequest
                 {
-                    ApiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv",
+                    ApiKey = Environment.GetEnvironmentVariable("ApiKey"),
                     DeviceId = "",
                     PhoneNumber = "07064415311",
                     TemplateId = "1493-csdn3-ns34w-sd3434-dfdf",

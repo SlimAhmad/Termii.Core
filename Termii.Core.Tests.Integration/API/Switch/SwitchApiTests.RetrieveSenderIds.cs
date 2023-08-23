@@ -16,7 +16,7 @@ namespace Termii.Core.Tests.Integration.API.Switch
 
             // given
 
-            var apiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv";
+            var apiKey = Environment.GetEnvironmentVariable("ApiKey");
           
             // when
             FetchSenderIds retrievedTermiiModel =

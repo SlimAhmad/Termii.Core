@@ -17,7 +17,7 @@ namespace Termii.Core.Tests.Integration.API.Tokens
             {
                 Request = new VoiceCallRequest
                 {
-                    ApiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv",
+                    ApiKey = Environment.GetEnvironmentVariable("ApiKey"),
                     Code = 3344,
                     PhoneNumber = "07064415311",
             

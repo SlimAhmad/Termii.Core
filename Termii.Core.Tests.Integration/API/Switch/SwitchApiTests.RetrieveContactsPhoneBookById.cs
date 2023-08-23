@@ -16,7 +16,7 @@ namespace Termii.Core.Tests.Integration.API.Switch
 
             // given
 
-            var apiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv";
+            var apiKey = Environment.GetEnvironmentVariable("ApiKey");
             var phoneBookId = "bdf582ef-d5e5-4940-add2-c0d8a73c19e3";
             // when
             FetchContactsByPhoneBookId retrievedTermiiModel =

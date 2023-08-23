@@ -17,7 +17,7 @@ namespace Termii.Core.Tests.Integration.API.Tokens
             {
                 Request = new SendTokenRequest
                 {
-                    ApiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv",
+                    ApiKey = Environment.GetEnvironmentVariable("ApiKey"),
                     PinType = "NUMERIC",
                     PinTimeToLive = 5,
                     PinLength = 6,

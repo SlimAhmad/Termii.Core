@@ -16,7 +16,7 @@ namespace Termii.Core.Tests.Integration.API.Switch
 
             // given
 
-            var apiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv";
+            var apiKey = Environment.GetEnvironmentVariable("ApiKey");
             var phoneBookId = "7914a23d-8f41-4d49-abd6-5749dde71d1f";
             // when
             DeletePhoneBook retrievedTermiiModel =

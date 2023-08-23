@@ -17,7 +17,7 @@ namespace Termii.Core.Tests.Integration.API.Tokens
             {
                 Request = new VerifyTokenRequest
                 {
-                    ApiKey = "TLvP5oclsN6KPnJ8VPKXYtH7qCUSTrHkADiX1xs6G29yExzw2sNTvxWPTz10Qv",
+                    ApiKey = Environment.GetEnvironmentVariable("ApiKey"),
                     Pin = "248140",
                     PinId = "a621ea48-8d32-49c4-af40-92e215e68064",
                   
