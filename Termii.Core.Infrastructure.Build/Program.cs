@@ -18,8 +18,7 @@ namespace TermiiWave.Core.Infrastructure.Build
 
             var githubPipeline = new GithubPipeline
             {
-                Name = "Termii.Core  Build",
-
+                Name = "Termii.Core Build",
 
                 OnEvents = new Events
                 {
